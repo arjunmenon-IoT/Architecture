@@ -13,12 +13,13 @@ Power Supply: RFID components require power to operate. Power sources can vary d
 These components work together to create an RFID system that enables automatic identification, tracking, and management of objects or assets. The architecture can be customized and scaled based on the specific application requirements, such as inventory management, access control, or supply chain optimization.</description>
     <friendlyName>All Steriotypes mentioned here are allocated to our RFID project </friendlyName>
     <prototypes type="systemcomposer.profile.Prototype" uuid="fd3285a3-c953-4120-9765-c5e5a2b1040a">
-      <abstract>true</abstract>
       <appliesTo>Component</appliesTo>
       <componentHeaderColor empty="true"/>
       <connectorLineColor empty="true"/>
       <description>In an RFID system, various types of cables are used to establish connections between different components
 It&apos;s important to select cables that meet the specific requirements of your RFID system, considering factors such as cable length, data transfer speed, noise immunity, and compatibility with the devices and communication protocols involved. Additionally, following industry standards and guidelines for cable installation and routing can help ensure the reliable and efficient operation of the RFID system</description>
+      <icon>CUSTOM</icon>
+      <p_customIcon>cable.png</p_customIcon>
       <p_Name>Cables</p_Name>
       <defaultStereotypeMap type="systemcomposer.profile.DefaultStereotypeMap" uuid="e4458769-1754-4ece-aef2-1e8f2a94ffa8">
         <defaults type="systemcomposer.profile.DefaultStereotypePair" uuid="cb5de855-c67d-49cf-b21f-a1693113b2b7">
@@ -143,6 +144,10 @@ It&apos;s important to select cables that meet the specific requirements of your
     <p_Name>Blupanda</p_Name>
     <elemProxy type="systemcomposer.services.proxy.ProxyTarget" uuid="1fcc0aad-ff83-4324-8fc6-71df41f19eeb"/>
   </systemcomposer.profile.Profile>
+  <systemcomposer.services.proxy.ModelIdentifier type="systemcomposer.services.proxy.ModelIdentifier" uuid="14cd2333-1e20-4fb1-b69c-3de205f1dc91">
+    <URI>Blupanda</URI>
+    <modelType>PROFILE_MODEL</modelType>
+  </systemcomposer.services.proxy.ModelIdentifier>
   <systemcomposer.services.proxy.CurrentModelResolver type="systemcomposer.services.proxy.CurrentModelResolver" uuid="d445bb8d-8a23-46f7-afd7-7a4a5cccec97">
     <Proxies type="systemcomposer.services.proxy.UnidirectionalProxy" uuid="c7652653-e691-4193-9fbe-b18141f85051">
       <Source type="systemcomposer.services.proxy.ProxySource" uuid="2858f81d-cf15-4355-a24e-23833005d900"/>
@@ -169,9 +174,7 @@ It&apos;s important to select cables that meet the specific requirements of your
       <TargetId>dcfaa578-9f6f-4738-abf7-84dfc21a27aa</TargetId>
     </Proxies>
   </systemcomposer.services.proxy.CurrentModelResolver>
-  <systemcomposer.services.proxy.ModelIdentifier type="systemcomposer.services.proxy.ModelIdentifier" uuid="14cd2333-1e20-4fb1-b69c-3de205f1dc91">
-    <URI>Blupanda</URI>
-    <modelType>PROFILE_MODEL</modelType>
-  </systemcomposer.services.proxy.ModelIdentifier>
   <systemcomposer.property.UnitQueryClientWrapper type="systemcomposer.property.UnitQueryClientWrapper" uuid="c66ff926-0709-4f73-86c3-88f6fa1a20ce"/>
+  <systemcomposer.services.proxy.WorkspaceWrapper type="systemcomposer.services.proxy.WorkspaceWrapper" uuid="eb0302e1-127b-4d79-882e-46cc9a21c29e"/>
+  <systemcomposer.services.proxy.WorkspaceWrapper type="systemcomposer.services.proxy.WorkspaceWrapper" uuid="0507d942-6245-43fd-99d8-9e206eb05e26"/>
 </MF0>
