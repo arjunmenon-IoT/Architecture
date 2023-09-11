@@ -144,10 +144,6 @@ It&apos;s important to select cables that meet the specific requirements of your
     <p_Name>Blupanda</p_Name>
     <elemProxy type="systemcomposer.services.proxy.ProxyTarget" uuid="1fcc0aad-ff83-4324-8fc6-71df41f19eeb"/>
   </systemcomposer.profile.Profile>
-  <systemcomposer.services.proxy.ModelIdentifier type="systemcomposer.services.proxy.ModelIdentifier" uuid="14cd2333-1e20-4fb1-b69c-3de205f1dc91">
-    <URI>Blupanda</URI>
-    <modelType>PROFILE_MODEL</modelType>
-  </systemcomposer.services.proxy.ModelIdentifier>
   <systemcomposer.services.proxy.CurrentModelResolver type="systemcomposer.services.proxy.CurrentModelResolver" uuid="d445bb8d-8a23-46f7-afd7-7a4a5cccec97">
     <Proxies type="systemcomposer.services.proxy.UnidirectionalProxy" uuid="c7652653-e691-4193-9fbe-b18141f85051">
       <Source type="systemcomposer.services.proxy.ProxySource" uuid="2858f81d-cf15-4355-a24e-23833005d900"/>
@@ -174,6 +170,10 @@ It&apos;s important to select cables that meet the specific requirements of your
       <TargetId>dcfaa578-9f6f-4738-abf7-84dfc21a27aa</TargetId>
     </Proxies>
   </systemcomposer.services.proxy.CurrentModelResolver>
+  <systemcomposer.services.proxy.ModelIdentifier type="systemcomposer.services.proxy.ModelIdentifier" uuid="14cd2333-1e20-4fb1-b69c-3de205f1dc91">
+    <URI>Blupanda</URI>
+    <modelType>PROFILE_MODEL</modelType>
+  </systemcomposer.services.proxy.ModelIdentifier>
   <systemcomposer.property.UnitQueryClientWrapper type="systemcomposer.property.UnitQueryClientWrapper" uuid="c66ff926-0709-4f73-86c3-88f6fa1a20ce"/>
   <systemcomposer.services.proxy.WorkspaceWrapper type="systemcomposer.services.proxy.WorkspaceWrapper" uuid="eb0302e1-127b-4d79-882e-46cc9a21c29e"/>
   <systemcomposer.services.proxy.WorkspaceWrapper type="systemcomposer.services.proxy.WorkspaceWrapper" uuid="0507d942-6245-43fd-99d8-9e206eb05e26"/>

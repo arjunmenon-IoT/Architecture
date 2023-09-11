@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/SlsaMaskTree/R2020a">
+  <slsa.mm.maskTree.MaskTree type="slsa.mm.maskTree.MaskTree" uuid="a3ab574c-c904-4fcd-9c49-3e3a2f870a8f">
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="a87ce461-e8b6-4d0a-aace-e565fcc67c38">
+      <blockPath>Signal_Simulation_limit_switch/Repeating Sequence Stair</blockPath>
+      <childrenIds>Signal_Simulation_limit_switch:3:2</childrenIds>
+      <id>Signal_Simulation_limit_switch:3</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="4adea6e9-d3c7-4fbb-8c87-7a1b14c6285f">
+        <cachedVariables type="slsa.mm.maskTree.Variable" uuid="0053e49c-f7ef-43f4-899c-f1af84cff136">
+          <name>nn</name>
+          <value>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAABgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAJAAAACAAAAAAAAAAAABBA</value>
+        </cachedVariables>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="1f8e3a62-8dc8-443f-a512-c69502ee18d9">
+          <evaluate>true</evaluate>
+          <expression>[3 1 4 2 1].&apos;</expression>
+          <isTunable>true</isTunable>
+          <name>OutValues</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="51e30cb0-245f-4886-a767-5e980a355c13">
+          <evaluate>true</evaluate>
+          <expression>-1</expression>
+          <name>tsamp</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="88072a87-2925-4669-9d9d-68b4f7b783cc">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMin</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a27aee4b-598b-4c32-9ee8-5738ef052fa6">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMax</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="36a31aba-4f9f-43a6-bd2b-35c966406f1b">
+          <expression>double</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="b6db3c08-5d17-4a33-a08d-41b2c3233bcd">
+          <expression>double</expression>
+          <name>OutputDataTypeScalingMode</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="99fb7647-3846-4208-bc80-7c19bd2a001d">
+          <evaluate>true</evaluate>
+          <expression>fixdt(0,8)</expression>
+          <name>OutDataType</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a92208b7-6cce-4fbf-9b9e-d0595d10a631">
+          <expression>Best Precision: Vector-wise</expression>
+          <name>ConRadixGroup</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="29d86a98-72ba-4e98-bd1a-42dcb242dce1">
+          <evaluate>true</evaluate>
+          <expression>2^-12</expression>
+          <name>OutScaling</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="73633509-e2e6-45be-95bb-9d2521f22436">
+          <evaluate>true</evaluate>
+          <expression>0</expression>
+          <name>LockScale</name>
+        </dialogParameters>
+        <initializationCode>blk = gcb;
+nn = length(OutValues)-1;
+dim = size(OutValues);
+if length(dim) &gt; 2 || min(dim) ~= 1
+  [X, Y] =  generateQuestionMarkIconData;
+  error(&apos;Parameter &apos;&apos;output values&apos;&apos; must be a vector or a scalar&apos;);
+else
+  [X, Y] = genRepeatingSequenceStairBlockIconData(OutValues);
+end
+set_param([blk, &apos;/&apos;, &apos;Output&apos;], &apos;MarkFixedInMinorTimeSteps&apos;, &apos;on&apos;);
+</initializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="af2f7918-6a05-424c-9ce7-d576520dd3fe">
+      <blockPath>Signal_Simulation_limit_switch/Repeating Sequence Stair/LimitedCounter</blockPath>
+      <childrenIds>Signal_Simulation_limit_switch:3:2:1</childrenIds>
+      <childrenIds>Signal_Simulation_limit_switch:3:2:5</childrenIds>
+      <id>Signal_Simulation_limit_switch:3:2</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="6271f468-91bb-46a4-96a8-e22780cb7b78">
+        <cachedVariables type="slsa.mm.maskTree.Variable" uuid="4b1f47aa-57e8-4071-9c74-fd5a2623c43d">
+          <name>nbits</name>
+          <value>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAABgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAJAAAACAAAAAAAAAAAACBA</value>
+        </cachedVariables>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="3c51a50d-9ec1-4a3f-844c-55c8d1391640">
+          <evaluate>true</evaluate>
+          <expression>nn</expression>
+          <isTunable>true</isTunable>
+          <name>uplimit</name>
+          <referencedVariables type="slsa.mm.maskTree.Variable" uuid="8b40e453-dd50-48d0-b1ee-f5e1a10ab38c">
+            <name>nn</name>
+            <value></value>
+            <workspace>Signal_Simulation_limit_switch:3</workspace>
+          </referencedVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="27fa5e25-afde-48ea-91f5-92b964ed6a44">
+          <evaluate>true</evaluate>
+          <expression>tsamp</expression>
+          <name>tsamp</name>
+          <referencedVariables type="slsa.mm.maskTree.Variable" uuid="c7d0c28a-8de4-4ad0-ba52-dc6421581821">
+            <name>tsamp</name>
+            <value></value>
+            <workspace>Signal_Simulation_limit_switch:3</workspace>
+          </referencedVariables>
+        </dialogParameters>
+        <initializationCode>nbits = sl(&apos;counter_init&apos;, uplimit, gcbh);</initializationCode>
+      </masks>
+      <parentId>Signal_Simulation_limit_switch:3</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="b4ca8b60-f6af-4da5-9620-58bfe058d590">
+      <blockPath>Signal_Simulation_limit_switch/Repeating Sequence Stair/LimitedCounter/Data Type Propagation</blockPath>
+      <id>Signal_Simulation_limit_switch:3:2:1</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="0418eddf-00fa-4966-806c-338b9205baac">
+        <cachedVariables type="slsa.mm.maskTree.Variable" uuid="b259be5d-a424-4b20-9282-d09860252d51">
+          <name>DblOver</name>
+          <value>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAABgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAJAAAACAAAAAAAAAAAAAAA</value>
+        </cachedVariables>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="08e91496-a830-42a0-969d-f900ec907f81">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>PropDataTypeMode</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="7a56428e-5fac-4fd7-8107-e2ef790d3d97">
+          <evaluate>true</evaluate>
+          <expression>uint(nbits)</expression>
+          <name>PropDataType</name>
+          <referencedVariables type="slsa.mm.maskTree.Variable" uuid="958095f4-900c-47fb-b883-937b304a2b81">
+            <name>nbits</name>
+            <value></value>
+            <workspace>Signal_Simulation_limit_switch:3:2</workspace>
+          </referencedVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="7af3ceac-1801-4fae-bdf0-11415c698530">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>IfRefDouble</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="ab5fa7ac-4e09-4421-bfde-771eb4bad97a">
+          <evaluate>true</evaluate>
+          <expression>2</expression>
+          <name>IfRefSingle</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="940f3399-1fc0-4205-8880-e913daeb13bd">
+          <evaluate>true</evaluate>
+          <expression>3</expression>
+          <name>IsSigned</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="dbce5e36-00e3-4804-bea1-9e1b5cac7440">
+          <evaluate>true</evaluate>
+          <expression>3</expression>
+          <name>NumBitsBase</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="b655f38e-1a23-4ac8-b062-a986b8b5eb3f">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>NumBitsMult</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="55187669-a1a2-4287-90fe-ba1fe4595c8b">
+          <evaluate>true</evaluate>
+          <expression>0</expression>
+          <name>NumBitsAdd</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="05e9d1f7-d6cf-4fde-8eab-de526af38703">
+          <evaluate>true</evaluate>
+          <expression>1:128</expression>
+          <name>NumBitsAllowFinal</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="6019717b-2e03-47a8-8a47-6ae4da4f8f07">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>PropScalingMode</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a2e906b9-1c59-4410-aca0-015797c21bb2">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>PropScaling</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="f522a065-b0e2-4cf6-945d-d9a9041fdb3d">
+          <evaluate>true</evaluate>
+          <expression>[5 -7]</expression>
+          <name>ValuesUsedBestPrec</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="4b994640-7d69-4f5d-ac34-7484fa02f45e">
+          <evaluate>true</evaluate>
+          <expression>4</expression>
+          <name>SlopeBase</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="2d5a9832-4700-49d7-b104-de021189eb7b">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>SlopeMult</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="5ddf4d2b-018e-4cb6-bd34-fa244ee6d0fc">
+          <evaluate>true</evaluate>
+          <expression>0</expression>
+          <name>SlopeAdd</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="e86e7379-2c6c-4745-a63d-022a5ff399c2">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>BiasBase</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="7fff6b46-2077-43ca-ba51-3b590935373c">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <name>BiasMult</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="97df141c-732b-4191-abf0-2a3fb1fbf505">
+          <evaluate>true</evaluate>
+          <expression>0</expression>
+          <name>BiasAdd</name>
+        </dialogParameters>
+        <initializationCode>DblOver = 0;</initializationCode>
+      </masks>
+      <parentId>Signal_Simulation_limit_switch:3:2</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="14e99268-ab69-475c-8f70-557be2a9aa13">
+      <blockPath>Signal_Simulation_limit_switch/Repeating Sequence Stair/LimitedCounter/Wrap To Zero</blockPath>
+      <id>Signal_Simulation_limit_switch:3:2:5</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="6a56d4d5-76a3-492c-a951-d9133275961d">
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="e9b4fcdf-5bfd-42e3-a3ff-1db605695736">
+          <evaluate>true</evaluate>
+          <expression>uplimit</expression>
+          <isTunable>true</isTunable>
+          <name>Threshold</name>
+          <referencedVariables type="slsa.mm.maskTree.Variable" uuid="acdfeca0-6c98-42fa-9453-21ddb3140b4b">
+            <name>uplimit</name>
+            <value></value>
+            <workspace>Signal_Simulation_limit_switch:3:2</workspace>
+          </referencedVariables>
+        </dialogParameters>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>Signal_Simulation_limit_switch:3:2</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="3e3bb468-4660-4b07-b5d4-2b814b0b6093">
+      <blockPath>Signal_Simulation_limit_switch/Repeating Sequence</blockPath>
+      <id>Signal_Simulation_limit_switch:4</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="ffac02cc-bdd4-4935-bb5d-d87aa8b8005f">
+        <cachedVariables type="slsa.mm.maskTree.Variable" uuid="b3efce71-a2f3-447c-8646-a1a430256cd6">
+          <name>period</name>
+          <value>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAABgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAJAAAACAAAAAAAAAAAAABA</value>
+        </cachedVariables>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a901ee7f-556f-4638-9b73-1dda365c2971">
+          <evaluate>true</evaluate>
+          <expression>[0 2]</expression>
+          <isTunable>true</isTunable>
+          <name>rep_seq_t</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="18dfbd69-9bc8-4207-9db8-8933425d775a">
+          <evaluate>true</evaluate>
+          <expression>[0 2]</expression>
+          <isTunable>true</isTunable>
+          <name>rep_seq_y</name>
+        </dialogParameters>
+        <initializationCode>X = [];
+Y = [];
+if (length(rep_seq_t) ~= length(rep_seq_y)),
+  error(&apos;Length of time vector and output vector must be the same.&apos;)
+end
+dbl_rep_seq_t = double(rep_seq_t);
+dbl_rep_seq_y = double(rep_seq_y);
+period = max(dbl_rep_seq_t) - min(dbl_rep_seq_t);
+period = str2num(sprintf(&apos;%0.5g&apos;,period));
+if ~isdeployed
+[X, Y] = genRepeatingSequenceBlockIconData(dbl_rep_seq_t, dbl_rep_seq_y);
+end
+</initializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="59ec7511-ba9b-4642-9729-cd6b76b750cd">
+      <blockPath>Signal_Simulation_limit_switch/Waveform Generator</blockPath>
+      <id>Signal_Simulation_limit_switch:5</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="b0ef856d-1a5f-4806-8802-ccbd870e9bfd">
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="4d64179b-cbbc-4087-9ab1-5b8bd2652931">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMin</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="2ff71ff4-a123-4d05-a749-d78f956aa588">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMax</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a8e2ceda-5d09-4704-9322-c4d8c8e78b51">
+          <expression>double</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="45aad937-4d83-4f6f-85d9-9a2008a4c6e0">
+          <expression>off</expression>
+          <name>LockScale</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="71e51163-9039-4f2c-9a74-17786872c351">
+          <expression>Floor</expression>
+          <name>RndMeth</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="b16cff59-e184-4945-a520-596f41c003b4">
+          <expression>off</expression>
+          <name>SaturateOnIntegerOverflow</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="deb91d48-236a-4f6d-bcfe-6e6bb35704bd">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>SelectedSignal</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="fdceaa46-86bb-4854-8b85-dc18e0edda7e">
+          <name>Signals</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="cbe6ba47-d942-4254-9e35-a0f1370e65ae">
+          <expression>0</expression>
+          <name>LoadFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="522f1173-64f1-49c1-844a-ce6f1f1f3519">
+          <expression>[]</expression>
+          <name>CloseFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="237450db-4adc-4cbf-93d0-f2c9804183cb">
+          <expression>[]</expression>
+          <name>ApplyFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="ab33ebc1-0b66-4e5e-9baa-64b64c666c04">
+          <evaluate>true</evaluate>
+          <expression>0.1</expression>
+          <name>SampleTime</name>
+        </dialogParameters>
+        <initializationCode>if (isequal(LoadFlag,&apos;1&apos;))
+    derivedSignals.DSMaskLoad(gcbh);
+end
+
+if (isequal(ApplyFlag,&apos;1&apos;))
+    derivedSignals.Apply_cb(gcbh, Signals, SelectedSignal);
+end</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="b33f9145-740c-4acd-81e7-fdafd62dbd3d">
+      <childrenIds>Signal_Simulation_limit_switch:3</childrenIds>
+      <childrenIds>Signal_Simulation_limit_switch:4</childrenIds>
+      <childrenIds>Signal_Simulation_limit_switch:5</childrenIds>
+      <id>root</id>
+    </maskedBlocks>
+    <flags type="slsa.mm.maskTree.MaskTreeFlags" uuid="dc630417-ebe3-4f82-ad1c-f2439ce796e9"/>
+  </slsa.mm.maskTree.MaskTree>
+</MF0>

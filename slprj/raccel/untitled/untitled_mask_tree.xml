@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/SlsaMaskTree/R2020a">
+  <slsa.mm.maskTree.MaskTree type="slsa.mm.maskTree.MaskTree" uuid="6d04e648-b8a6-453b-bd85-313a699d5ecf">
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="2694805f-56a4-4835-807e-e72f3352f2c0">
+      <childrenIds>untitled:1</childrenIds>
+      <id>root</id>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="5e7af905-ca91-4fa6-91a3-a03a7cc2be25">
+      <blockPath>untitled/Waveform Generator</blockPath>
+      <id>untitled:1</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="2ab91060-e3ff-4975-9ef0-f5c0dcfc8207">
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="a516c000-d630-4c75-bf14-22736b8326a6">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMin</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="7920c1b5-282c-4f34-8c63-ed79cb56b448">
+          <evaluate>true</evaluate>
+          <expression>[]</expression>
+          <name>OutMax</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="6f26c50e-696f-4fd5-b8db-be1d67ca0d22">
+          <expression>int8</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="9a848374-f75d-4562-b496-2f656eb0165f">
+          <expression>off</expression>
+          <name>LockScale</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="2977ea11-0abd-4926-b6ae-b4e3524ddb97">
+          <expression>Floor</expression>
+          <name>RndMeth</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="0a3a6f96-9f55-4c59-ac6f-a3c8c49cbb11">
+          <expression>off</expression>
+          <name>SaturateOnIntegerOverflow</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="7bbecd9a-000c-4370-9719-3e03c3928bc8">
+          <evaluate>true</evaluate>
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>SelectedSignal</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="93d00f93-2bc9-468c-84d1-5476f634a45d">
+          <name>Signals</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="1852ed29-af70-40af-987f-26e5f77fe5eb">
+          <expression>0</expression>
+          <name>LoadFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="b6423752-2a41-47ce-902a-7e4b4b9d6293">
+          <expression>[]</expression>
+          <name>CloseFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="e11306e4-a6be-44a6-8223-80c974561b9f">
+          <expression>0</expression>
+          <name>ApplyFlag</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="bb61e5c5-322f-43c8-bd4c-b4f558ba440e">
+          <evaluate>true</evaluate>
+          <expression>0.1</expression>
+          <name>SampleTime</name>
+        </dialogParameters>
+        <initializationCode>if (isequal(LoadFlag,&apos;1&apos;))
+    derivedSignals.DSMaskLoad(gcbh);
+end
+
+if (isequal(ApplyFlag,&apos;1&apos;))
+    derivedSignals.Apply_cb(gcbh, Signals, SelectedSignal);
+end</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <flags type="slsa.mm.maskTree.MaskTreeFlags" uuid="46c6b202-b7e5-4c5f-ba61-40b6144aba71"/>
+  </slsa.mm.maskTree.MaskTree>
+</MF0>

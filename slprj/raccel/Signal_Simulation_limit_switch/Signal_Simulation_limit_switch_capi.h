@@ -1,0 +1,5 @@
+#ifndef RTW_HEADER_Signal_Simulation_limit_switch_capi_h_
+#define RTW_HEADER_Signal_Simulation_limit_switch_capi_h_
+#include "Signal_Simulation_limit_switch.h"
+extern void Signal_Simulation_limit_switch_InitializeDataMapInfo ( void ) ;
+#endif
